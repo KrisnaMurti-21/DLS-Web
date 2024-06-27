@@ -1,0 +1,106 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #eee;
+}
+
+.sidebar {
+  height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .content {
+    padding-left: 250px;
+  }
+}
+
+#side_nav {
+  background: #000;
+  min-width: 250px;
+  max-width: 250px;
+  transition: all 0.2;
+}
+
+.content {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.sidebar li.active {
+  background: #eee;
+  border-radius: 8px;
+}
+
+.sidebar li.active a,
+.sidebar li.active a:hover {
+  color: #000;
+}
+
+.sidebar li a {
+  color: #eee;
+}
+
+hr.h-color {
+  background: #eee;
+  height: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  #side_nav {
+    margin-left: -250px;
+    position: fixed;
+    min-height: 100vh;
+    z-index: 1;
+  }
+
+  #side_nav.active {
+    margin: 0;
+  }
+}
+
+.chartCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chartBox {
+  width: 80%;
+  height: 250px;
+  border-radius: 5px;
+  background: rgb(255, 248, 240);
+}
+
+.btn_cetak {
+  background-color: #007bff; /* Warna latar belakang (blue) */
+  color: #ffffff; /* Warna teks (putih) */
+  padding: 10px 20px; /* Padding di atas dan bawah 10px, padding kiri dan kanan 20px */
+  border: none; /* Menghapus garis tepi tombol */
+  border-radius: 4px; /* Membuat sudut tombol sedikit bulat */
+  cursor: pointer; /* Ganti kursor menjadi tangan saat diarahkan ke tombol */
+  font-size: 16px; /* Ukuran teks tombol */
+}
+
+.btn_cetak:hover {
+  background-color: #0056b3;
+}
+@media print {
+  button {
+    display: none;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  @page {
+    size: landscape;
+  }
+  .chartBox {
+    width: 100%;
+  }
+}
